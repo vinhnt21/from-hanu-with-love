@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Admission Counseling - Guangxi Normal University</title>
-    <!-- fav icon -->
-    <link rel="icon" type="image/png" href="static/gxnu-logo.png">
-    <link href="style.css" rel="stylesheet">
-    <style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32x32.png?text=Icon"> <style>
         :root {
             --primary-color: #CC47B4;
             --primary-light: #E067CC;
@@ -31,11 +30,6 @@
             --border-radius: 12px;
             --border-radius-lg: 16px;
         }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
@@ -43,8 +37,9 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-
-        /* Navigation */
+        img {
+            max-height: 500px !important
+        }
         .navbar {
             background-color: rgba(255, 255, 255, 0.95) !important;
             backdrop-filter: blur(10px);
@@ -52,7 +47,6 @@
             padding: 0.75rem 0;
             transition: all 0.3s ease;
         }
-
         .navbar-brand {
             font-weight: 800;
             font-size: 1.25rem;
@@ -60,748 +54,49 @@
             display: flex;
             align-items: center;
         }
-
-        .navbar-logo {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .navbar-brand i {
-            background: var(--gradient-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-link {
-            color: var(--text-dark) !important;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem !important;
-            border-radius: var(--border-radius);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-            background-color: rgba(30, 64, 175, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .nav-link.active {
-            color: var(--primary-color) !important;
-            background-color: rgba(30, 64, 175, 0.1);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: var(--gradient-primary);
-            color: var(--text-white);
-            padding: 8rem 0 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            font-weight: 400;
-        }
-
-        .team-info {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: var(--border-radius-lg);
-            margin-top: 3rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .university-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-direction: row;
-            flex-wrap: nowrap;
-        }
-
-        .logo-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            flex: 0 0 auto;
-        }
-
-        .university-logo {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background: rgba(255,255,255,0.9);
-            padding: 0.5rem;
-        }
-
-        .logo-text {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-white);
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .collaboration-icon {
-            font-size: 1.5rem;
-            color: var(--text-white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 2s infinite;
-            flex: 0 0 auto;
-            min-width: 2rem;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-        }
-
-        /* Cards */
-        .problem-card, .solution-card {
-            background: var(--text-white);
-            border-radius: var(--border-radius-lg);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.4s ease;
-            border: 1px solid var(--border-color);
-            height: 100%;
-        }
-
-        .problem-card:hover, .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary-light);
-        }
-
-        .problem-icon {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--danger-color);
-            margin-bottom: 1rem;
-        }
-
-        /* New Problems Section Styles */
-        .problem-header {
-            margin-bottom: 2rem;
-        }
-
-        .problem-category {
-            background: var(--primary-color);
-            color: var(--text-white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-align: center;
-            margin: 0;
-            letter-spacing: 0.5px;
-        }
-
-        .problem-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .problem-item {
-            background: var(--text-white);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .problem-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .problem-icon-wrapper {
-            background: rgba(204, 71, 180, 0.1);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .problem-icon-wrapper i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .problem-content {
-            flex: 1;
-        }
-
-        .problem-content h5 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .problem-content p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .solution-icon {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Technology Stack */
-        .tech-stack {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 5rem 0;
-        }
-
-        .tech-card {
-            background: var(--text-white);
-            border-radius: var(--border-radius-lg);
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.4s ease;
-            border: 1px solid var(--border-color);
-            height: 100%;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary-light);
-        }
-
-        .tech-logo {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .tech-card:hover .tech-logo {
-            transform: scale(1.1);
-        }
-
-        /* Flow Diagram */
-        .flow-diagram {
-            background: var(--text-white);
-            border-radius: var(--border-radius-lg);
-            padding: 2.5rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        .flow-diagram img {
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Comparison Table */
-        .comparison-table {
-            background: var(--text-white);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-        }
-
-        .table-header {
-            background: var(--gradient-primary);
-            color: var(--text-white);
-            font-weight: 700;
-        }
-
-        .table tbody tr {
-            transition: all 0.3s ease;
-        }
-
-        .table tbody tr:hover {
-            background-color: rgba(30, 64, 175, 0.05);
-            transform: scale(1.01);
-        }
-
-        /* Demo Section */
-        .demo-section {
-            background: var(--gradient-primary);
-            color: var(--text-white);
-            padding: 5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .demo-button {
-            background: var(--text-white);
-            color: var(--primary-color);
-            border: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .demo-button:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            color: var(--primary-color);
-            background: var(--text-white);
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            color: var(--text-white);
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .chinese-text {
-            font-style: italic;
-            margin-top: 1.5rem;
-            opacity: 0.8;
-            font-size: 1.1rem;
-        }
-
-        /* Utilities */
-        .py-5 {
-            padding: 4rem 0 !important;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .container {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-section {
-                padding: 5rem 0 3rem;
-            }
-            
-            .team-info {
-                padding: 1.5rem;
-                margin-top: 2rem;
-            }
-            
-            .tech-card, .problem-card, .solution-card {
-                padding: 1.5rem;
-            }
-            
-            .flow-diagram {
-                padding: 1.5rem;
-                margin: 2rem 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .hero-section {
-                padding: 4rem 0 3rem;
-            }
-            
-            .navbar {
-                padding: 0.5rem 0;
-            }
-            
-            .navbar-brand {
-                font-size: 1.1rem;
-            }
-
-            .navbar-logo {
-                height: 30px;
-            }
-            
-            .nav-link {
-                padding: 0.75rem 1rem !important;
-                margin: 0.25rem 0;
-                text-align: center;
-            }
-            
-            .section-title {
-                margin-bottom: 2rem;
-            }
-            
-            .team-info {
-                padding: 1.25rem;
-                margin-top: 1.5rem;
-            }
-
-            .university-logos {
-                gap: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .university-logo {
-                height: 50px;
-                padding: 0.375rem;
-            }
-
-            .logo-text {
-                font-size: 0.8rem;
-            }
-
-            .collaboration-icon {
-                font-size: 1.25rem;
-            }
-            
-            .problem-card, .solution-card, .tech-card {
-                padding: 1.25rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .problem-category {
-                padding: 0.75rem 1.5rem;
-                font-size: 1rem;
-            }
-
-            .problem-item {
-                padding: 1.25rem;
-                flex-direction: row;
-                gap: 0.75rem;
-            }
-
-            .problem-icon-wrapper {
-                width: 50px;
-                height: 50px;
-            }
-
-            .problem-icon-wrapper i {
-                font-size: 1.25rem;
-            }
-            
-            .flow-diagram {
-                padding: 1.25rem;
-                margin: 1.5rem 0;
-            }
-            
-            .demo-button {
-                padding: 0.875rem 2rem;
-                font-size: 1rem;
-            }
-            
-            .py-5 {
-                padding: 3rem 0 !important;
-            }
-            
-            .tech-stack {
-                padding: 3.5rem 0;
-            }
-            
-            .demo-section {
-                padding: 3.5rem 0;
-            }
-            
-            .footer {
-                padding: 3rem 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                padding-left: 0.75rem;
-                padding-right: 0.75rem;
-            }
-            
-            .hero-section {
-                padding: 3rem 0 2.5rem;
-            }
-            
-            .hero-title {
-                margin-bottom: 1rem;
-            }
-            
-            .hero-subtitle {
-                margin-bottom: 2rem;
-            }
-            
-            .team-info {
-                padding: 1rem;
-                margin-top: 1.5rem;
-            }
-
-            .university-logos {
-                gap: 0.75rem;
-                margin-bottom: 1rem;
-                flex-direction: row !important;
-                flex-wrap: nowrap !important;
-            }
-
-            .university-logo {
-                height: 40px;
-                padding: 0.25rem;
-            }
-
-            .logo-text {
-                font-size: 0.75rem;
-            }
-
-            .collaboration-icon {
-                font-size: 1rem;
-            }
-            
-            .team-info h4 {
-                font-size: 1.1rem;
-            }
-            
-            .team-info p {
-                font-size: 0.9rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            .problem-card, .solution-card {
-                padding: 1rem;
-            }
-
-            .problem-category {
-                padding: 0.625rem 1.25rem;
-                font-size: 0.9rem;
-            }
-
-            .problem-item {
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-
-            .problem-icon-wrapper {
-                width: 45px;
-                height: 45px;
-                margin: 0 auto;
-            }
-
-            .problem-icon-wrapper i {
-                font-size: 1.125rem;
-            }
-
-            .problem-content h5 {
-                font-size: 1.1rem;
-                margin-bottom: 0.375rem;
-            }
-
-            .problem-content p {
-                font-size: 0.875rem;
-            }
-            
-            .solution-card h5 {
-                font-size: 1.1rem;
-            }
-            
-            .tech-card {
-                padding: 1rem;
-            }
-            
-            .tech-card h5 {
-                font-size: 1rem;
-                margin-bottom: 0.75rem;
-            }
-            
-            .tech-card p {
-                font-size: 0.85rem;
-            }
-            
-            .flow-diagram {
-                padding: 1rem;
-            }
-            
-            .flow-diagram h4 {
-                font-size: 1.2rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .flow-diagram h6 {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .flow-diagram p {
-                font-size: 0.85rem;
-            }
-            
-            .table {
-                font-size: 0.85rem;
-            }
-            
-            .demo-button {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.95rem;
-            }
-            
-            .alert {
-                font-size: 0.85rem;
-                padding: 0.75rem;
-            }
-            
-            .chinese-text {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .flow-diagram img {
-                max-height: 300px !important;
-            }
-            
-            .tech-logo {
-                font-size: 2rem !important;
-            }
-            
-            .problem-icon, .solution-icon {
-                font-size: 1.75rem !important;
-            }
-
-            .problem-icon-wrapper {
-                width: 40px !important;
-                height: 40px !important;
-            }
-
-            .problem-icon-wrapper i {
-                font-size: 1rem !important;
-            }
-
-            .navbar-logo {
-                height: 28px;
-            }
-
-            .university-logos {
-                gap: 0.25rem;
-                flex-direction: row !important;
-                align-items: center;
-                justify-content: center;
-                flex-wrap: nowrap !important;
-            }
-
-            .university-logo {
-                height: 35px;
-            }
-
-            .logo-text {
-                font-size: 0.7rem;
-            }
-
-            .collaboration-icon {
-                font-size: 1rem;
-                min-width: 1.5rem;
-            }
-        }
-
-        /* Animation and Performance */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-dark: #f9fafb;
-                --text-light: #d1d5db;
-                --secondary-color: #1f2937;
-                --border-color: #374151;
-            }
-        }
+        .navbar-logo { height: 40px; width: auto; object-fit: contain; }
+        .nav-link { color: var(--text-dark) !important; font-weight: 600; font-size: 0.95rem; padding: 0.5rem 1rem !important; border-radius: var(--border-radius); transition: all 0.3s ease; }
+        .nav-link:hover { color: var(--primary-color) !important; background-color: rgba(30, 64, 175, 0.08); transform: translateY(-2px); }
+        .nav-link.active { color: var(--primary-color) !important; background-color: rgba(30, 64, 175, 0.1); }
+        .hero-section { background: var(--gradient-primary); color: var(--text-white); padding: 8rem 0 4rem; text-align: center; position: relative; overflow: hidden; }
+        .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.5rem; text-shadow: 0 4px 8px rgba(0,0,0,0.3); line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1rem, 3vw, 1.5rem); margin-bottom: 2.5rem; opacity: 0.95; font-weight: 400; }
+        .team-info { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2rem; border-radius: var(--border-radius-lg); margin-top: 3rem; border: 1px solid rgba(255,255,255,0.2); max-width: 600px; margin-left: auto; margin-right: auto; }
+        .university-logo { height: 60px; width: auto; object-fit: contain; border-radius: var(--border-radius); box-shadow: 0 4px 8px rgba(0,0,0,0.1); background: rgba(255,255,255,0.9); padding: 0.5rem; }
+        .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: var(--primary-color); margin-bottom: 4rem; text-align: center; position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--gradient-accent); border-radius: 2px; }
+        .problem-card, .solution-card, .tech-card { background: var(--text-white); border-radius: var(--border-radius-lg); padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-lg); transition: all 0.4s ease; border: 1px solid var(--border-color); height: 100%; }
+        .problem-card:hover, .solution-card:hover, .tech-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: var(--primary-light); }
+        .problem-category { background: var(--primary-color); color: var(--text-white); padding: 1rem 2rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; text-align: center; margin: 0; letter-spacing: 0.5px; }
+        .problem-list { display: flex; flex-direction: column; gap: 1rem; }
+        .problem-item { background: var(--text-white); border-radius: var(--border-radius); padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .problem-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+        .problem-icon-wrapper { background: rgba(204, 71, 180, 0.1); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .problem-icon-wrapper i { font-size: 1.5rem; color: var(--primary-color); }
+        .problem-content h5 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dark); }
+        .problem-content p { font-size: 0.95rem; color: var(--text-light); margin: 0; line-height: 1.4; }
+        .tech-stack { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 5rem 0; }
+        .flow-diagram { background: var(--text-white); border-radius: var(--border-radius-lg); padding: 2.5rem; margin: 3rem 0; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+        .comparison-table-wrapper { background: var(--text-white); border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+        .table-header { background: var(--gradient-primary); color: var(--text-white); font-weight: 700; }
+        .table tbody tr:hover { background-color: rgba(30, 64, 175, 0.05); }
+        .demo-section { background: var(--gradient-primary); color: var(--text-white); padding: 5rem 0; text-align: center; }
+        .demo-button { background: var(--text-white); color: var(--primary-color); border: none; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; transition: all 0.4s ease; text-decoration: none; display: inline-block; box-shadow: var(--shadow-lg); }
+        .demo-button:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 35px rgba(0,0,0,0.2); color: var(--primary-color); }
+        .footer { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); color: var(--text-white); padding: 4rem 0; text-align: center; }
+        .chinese-text { font-style: italic; margin-top: 1.5rem; opacity: 0.8; font-size: 1.1rem; }
+        .py-5 { padding: 5rem 0 !important; }
+        .bg-light { background-color: #f8f9fa !important; }
+        .img-fluid { max-width: 100%; height: auto; }
+        .rounded-3 { border-radius: var(--border-radius-lg) !important; }
+        .shadow-lg { box-shadow: var(--shadow-lg) !important; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <img src="static/gxnu-logo.png" alt="Hanoi University" class="navbar-logo me-2">
+                <img src="static/gxnu-logo.png" alt="Guangxi Normal University Logo" class="navbar-logo me-2">
                 AI Admission Counseling
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -812,6 +107,7 @@
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#problems">Problems</a></li>
                     <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#comparison">Comparison</a></li>
                     <li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
                     <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
@@ -820,98 +116,85 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
             <h1 class="hero-title mt-5">AI-Powered Admission Counseling</h1>
             <p class="hero-subtitle">A Smart Agent for Guangxi Normal University</p>
             
             <div class="team-info">
-                <div class="university-logos mb-3">
-                    <div class="logo-item">
-                        <img src="static/hanu-logo.png" alt="Hanoi University" class="university-logo">
-                    </div>
-                    <div class="collaboration-icon">
-                        🤝
-                    </div>
-                    <div class="logo-item">
-                        <img src="static/gxnu-logo.png" alt="Guangxi Normal University" class="university-logo">
-                    </div>
+                <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
+                    <img src="static/hanu-logo.png" alt="Hanoi University Logo" class="university-logo">
+                    <span style="font-size: 2rem;">🤝</span>
+                    <img src="static/gxnu-logo.png" alt="Guangxi Normal University Logo" class="university-logo">
                 </div>
-                <h4><span class="me-2">👥</span>Group 6</h4>
-                <p class="mb-1"><strong>Members:</strong> Nguyen Thanh Vinh, Nguyen Gia Bao, Do Thanh Hai, Nguyen Hoang Phong</p>
                 <p class="mb-1"><strong>Faculty:</strong> Information Technology - Hanoi University</p>
                 <p class="mb-0"><strong>Date:</strong> July 10th, 2025</p>
             </div>
         </div>
     </section>
 
-    <!-- Problems Section -->
     <section id="problems" class="py-5">
         <div class="container">
-            <h2 class="section-title">Problems</h2>
+            <h2 class="section-title">The Challenge</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 text-center">
+                    <img src="static/gxnu-campus.png" alt="Guangxi Normal University Campus" class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="fw-bold">Scattered Information</h3>
+                    <p class="lead">Guangxi Normal University attracts many international students, but admission information is scattered and hard to access across various platforms.</p>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="problem-header">
+                <div class="col-lg-6 mb-4">
+                    <div class="problem-header mb-4">
                         <h3 class="problem-category">STUDENT CHALLENGE</h3>
                     </div>
                     <div class="problem-list">
                         <div class="problem-item">
-                            <div class="problem-icon-wrapper">
-                                ℹ️
-                            </div>
+                            <div class="problem-icon-wrapper"><i>ℹ️</i></div>
                             <div class="problem-content">
                                 <h5>Information Overload</h5>
-                                <p>Too much data sources (web, social,...)</p>
+                                <p>Too much data sources (web, social,...).</p>
                             </div>
                         </div>
                         <div class="problem-item">
-                            <div class="problem-icon-wrapper">
-                                🔍
-                            </div>
+                            <div class="problem-icon-wrapper"><i>🔍</i></div>
                             <div class="problem-content">
                                 <h5>Hard-to-Find Details</h5>
-                                <p>Specific questions are <strong>unanswered</strong>.</p>
+                                <p>Specific questions are unanswered.</p>
                             </div>
                         </div>
                         <div class="problem-item">
-                            <div class="problem-icon-wrapper">
-                                🕒
-                            </div>
+                            <div class="problem-icon-wrapper"><i>🕒</i></div>
                             <div class="problem-content">
                                 <h5>Lack of 24/7 Support</h5>
-                                <p>Help isn't always <strong>available</strong>.</p>
+                                <p>Help isn't always available.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="problem-header">
+                <div class="col-lg-6 mb-4">
+                    <div class="problem-header mb-4">
                         <h3 class="problem-category">UNIVERSITY CHALLENGE</h3>
                     </div>
                     <div class="problem-list">
                         <div class="problem-item">
-                            <div class="problem-icon-wrapper">
-                                ❓
-                            </div>
+                            <div class="problem-icon-wrapper"><i>❓</i></div>
                             <div class="problem-content">
                                 <h5>Repetitive Questions</h5>
                                 <p>Staff spend hours on the same queries.</p>
                             </div>
                         </div>
                         <div class="problem-item">
-                            <div class="problem-icon-wrapper">
-                                📋
-                            </div>
+                            <div class="problem-icon-wrapper"><i>📋</i></div>
                             <div class="problem-content">
                                 <h5>Inconsistent Answers</h5>
                                 <p>Different staff might give different information.</p>
                             </div>
                         </div>
                         <div class="problem-item">
-                            <div class="problem-icon-wrapper">
-                                ⚖️
-                            </div>
+                            <div class="problem-icon-wrapper"><i>⚖️</i></div>
                             <div class="problem-content">
                                 <h5>High Workload</h5>
                                 <p>Causes burnout during peak season.</p>
@@ -921,215 +204,196 @@
                 </div>
             </div>
         </div>
+       
     </section>
+<section id="rag-limitations" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">Traditional RAG Limitations</h2>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                 <h5 class="fw-bold mb-3">Traditional RAG Model</h5>
+                 <img src="static/rag-model.png" alt="Traditional RAG Model" style="height: 400px;" class="img-fluid rounded-3 shadow-lg">
+                 <small class="d-block text-center mt-2 text-muted">Traditional RAG Model.</small>
+            </div>
+            <div class="col-lg-7">
+                <div class="solution-card p-4">
+                    <h4 class="mb-4 text-danger">Why Traditional RAG is not enough?</h4>
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-3">
+                            <span class="me-3 fs-4" style="color: var(--danger-color);">❌</span>
+                            <div>
+                                <h6 class="fw-bold">Rigid Processing Flow</h6>
+                                <p class="mb-0">Always execute the entire RAG process, even for simple greetings like "hello", wasting resources[cite: 86, 87, 88].</p>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-3">
+                             <span class="me-3 fs-4" style="color: var(--danger-color);">❌</span>
+                             <div>
+                                <h6 class="fw-bold">Inaccurate Retrieval</h6>
+                                <p class="mb-0">When users ask too broad or vague questions, the system may fail to retrieve meaningful information[cite: 89, 90].</p>
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                             <span class="me-3 fs-4" style="color: var(--danger-color);">❌</span>
+                             <div>
+                                <h6 class="fw-bold">Reduced Quality</h6>
+                                <p class="mb-0">When too much data is embedded into the vector database, the retrieval quality may be reduced due to noise in the information[cite: 91].</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Solution Section -->
+
     <section id="solution" class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title">Our Solution: <br> AI Agent + RAG</h2>
-            
-            <div class="row mb-5">
+            <h2 class="section-title">Our Solution: AI Agent + RAG</h2>
+            <div class="row align-items-center mb-5">
                 <div class="col-md-6">
-                    <div class="solution-card">
-                        <div class="text-center">
-                            <span class="solution-icon" style="color: #ffc107; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; display: block;">⚠️</span>
-                            <h5>Traditional RAG Limitations</h5>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><span style="color: #ef4444;" class="me-2">❌</span>Rigid linear flow</li>
-                            <li><span style="color: #ef4444;" class="me-2">❌</span>Inaccurate retrieval for vague questions</li>
-                            <li><span style="color: #ef4444;" class="me-2">❌</span>Quality degradation with too much data</li>
-                        </ul>
-                    </div>
+                    <h3 class="fw-bold">A Smarter Approach</h3>
+                    <p class="lead">Our project uses AI to make the admission process easier by:</p>
+                    <ul>
+                        <li><span style="color: #10b981;" class="me-2">✅</span>Connecting students with clear, instant answers.</li>
+                        <li><span style="color: #10b981;" class="me-2">✅</span>Helping the university support them more efficiently.</li>
+                    </ul>
                 </div>
-                <div class="col-md-6">
-                    <div class="solution-card">
-                        <div class="text-center">
-                            <span class="solution-icon" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; display: block; color: var(--accent-color);">🤖</span>
-                            <h5>Our Agentic RAG Solution</h5>
-                        </div>
-                        <ul class="list-unstyled">
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Smart question analysis</li>
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Dynamic database selection</li>
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Intelligent question rewriting</li>
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Loop prevention mechanism</li>
-                        </ul>
-                    </div>
+                <div class="col-md-6 text-center">
+                     <img src="static/international-education-center.png" alt="International Education Center" class="img-fluid rounded-3 shadow-lg">
                 </div>
             </div>
 
-            <!-- Flow Diagram -->
             <div class="flow-diagram">
-                <h4 class="text-center mb-4">How Our Agent Thinks</h4>
+                <h4 class="text-center mb-4 fw-bold">How Our Agent Thinks</h4>
                 <div class="text-center">
-                    <img src="static/flow.png" 
-                         alt="Agent Flow Diagram" class="img-fluid" style="max-height: 500px; border-radius: 10px;">
+                    <img src="static/agent-flow.png" alt="Agent Flow Diagram from Slide 10" class="img-fluid" style="max-height: 500px; border-radius: 10px;">
                 </div>
                 <div class="mt-4">
-                    <h6>Key Steps:</h6>
+                    <h6 class="fw-bold">Key Improvements over Traditional RAG:</h6>
                     <div class="row">
-                        <div class="col-md-4">
-                            <p><strong>1. Analyze Question</strong><br>Determine if lookup is needed</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p><strong>2. Select Database</strong><br>Choose most relevant data source</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p><strong>3. Retrieve & Grade</strong><br>Find and evaluate documents</p>
-                        </div>
+                        <div class="col-md-4"><p><strong>Dynamic Flow Control:</strong> Only runs retrieval when needed, avoiding unnecessary steps.</p></div>
+                        <div class="col-md-4"><p><strong>Smarter Context Selection:</strong> Selects from multiple databases to retrieve more relevant info.</p></div>
+                        <div class="col-md-4"><p><strong>Modular Agent Reasoning:</strong> The agent decides the next step instead of rigid linear execution.</p></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Comparison Table -->
-            <div class="comparison-table mt-5">
-                <table class="table table-striped mb-0">
-                    <thead class="table-header">
-                        <tr>
-                            <th>Problem</th>
-                            <th>Our Solution</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span style="color: #f59e0b;" class="me-2">⚠️</span>LLM Hallucination</td>
-                            <td><span style="color: #10b981;" class="me-2">✅</span>Factual & Verified Answers</td>
-                        </tr>
-                        <tr>
-                            <td><span style="color: #f59e0b;" class="me-2">⚠️</span>Staff Overload</td>
-                            <td><span style="color: #10b981;" class="me-2">✅</span>24/7 Automated Support</td>
-                        </tr>
-                        <tr>
-                            <td><span style="color: #f59e0b;" class="me-2">⚠️</span>Scattered Information</td>
-                            <td><span style="color: #10b981;" class="me-2">✅</span>Centralized Knowledge Hub</td>
-                        </tr>
-                        <tr>
-                            <td><span style="color: #f59e0b;" class="me-2">⚠️</span>Slow Response Times</td>
-                            <td><span style="color: #10b981;" class="me-2">✅</span>Instantaneous Replies</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </section>
 
-    <!-- Technology Stack -->
-    <section id="technology" class="tech-stack">
+    <section id="comparison" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Solution Comparison</h2>
+            <div class="comparison-table-wrapper">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0 text-center">
+                        <thead class="table-header">
+                            <tr>
+                                <th style="width: 20%;">Feature</th>
+                                <th style="width: 20%;">Manual Support (Staff)</th>
+                                <th style="width: 20%;">LLM Only</th>
+                                <th style="width: 20%;">Traditional RAG ChatBot</th>
+                                <th style="width: 20%;">Our AI Agent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">Availability</td>
+                                <td>Office hours only</td>
+                                <td>24/7</td>
+                                <td>24/7</td>
+                                <td class="fw-bold" style="color: var(--primary-dark);">24/7 Always Ready</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Response Speed</td>
+                                <td>Slow, depends on workload</td>
+                                <td>Instant</td>
+                                <td>Instant</td>
+                                <td class="fw-bold" style="color: var(--primary-dark);">Instant & Ultra-Fast</td>
+                            </tr>
+                             <tr>
+                                <td class="fw-bold">Scalability</td>
+                                <td>Not scalable, expensive</td>
+                                <td>Scalable</td>
+                                <td>Scalable</td>
+                                <td class="fw-bold" style="color: var(--primary-dark);">Infinitely Scalable</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Consistency</td>
+                                <td>Inconsistent answers</td>
+                                <td>Inconsistent answers</td>
+                                <td>Highly consistent</td>
+                                <td class="fw-bold" style="color: var(--primary-dark);">Perfectly Consistent & Verified</td>
+                            </tr>
+                             <tr>
+                                <td class="fw-bold">Accuracy</td>
+                                <td>Prone to human error</td>
+                                <td>Hallucination Risk</td>
+                                <td>High, but can retrieve irrelevant facts</td>
+                                <td class="fw-bold" style="color: var(--primary-dark);">Highest - Self-Correction & Fact-Grounding</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             <small class="d-block text-center mt-2 text-muted"></small>
+        </div>
+    </section>
+
+    <section id="technology" class="tech-stack py-5">
         <div class="container">
             <h2 class="section-title">Technology Stack</h2>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="tech-card">
-                        <div class="tech-logo" style="color: #ff6b6b; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; transition: all 0.3s ease;">
-                            🧠
-                        </div>
-                        <h5>Deepseek LLM</h5>
-                        <p>Excellent Chinese language performance, cost-effective</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="tech-card">
-                        <div class="tech-logo" style="color: #4ecdc4; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; transition: all 0.3s ease;">
-                            🔗
-                        </div>
-                        <h5>LangChain/LangGraph</h5>
-                        <p>Agent reasoning framework for rapid development</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="tech-card">
-                        <div class="tech-logo" style="color: #45b7d1; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; transition: all 0.3s ease;">
-                            💻
-                        </div>
-                        <h5>Streamlit</h5>
-                        <p>Easy-to-use demo interface for rapid prototyping</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="tech-card">
-                        <div class="tech-logo" style="color: #f9ca24; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; transition: all 0.3s ease;">
-                            🗄️
-                        </div>
-                        <h5>Pinecone Vector DB</h5>
-                        <p>Managed, scalable, fast information retrieval</p>
-                    </div>
-                </div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="tech-card"><div style="font-size: 4rem; color: #ff6b6b;">🧠</div><h5>Deepseek LLM</h5><p>Excellent Chinese language performance, cost-effective.</p></div></div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="tech-card"><div style="font-size: 4rem; color: #4ecdc4;">🔗</div><h5>LangChain/LangGraph</h5><p>For building the agent's reasoning framework.</p></div></div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="tech-card"><div style="font-size: 4rem; color: #45b7d1;">💻</div><h5>Streamlit</h5><p>For rapid development and easy-to-use demo interface.</p></div></div>
+                <div class="col-md-3 col-sm-6 mb-4"><div class="tech-card"><div style="font-size: 4rem; color: #f9ca24;">🗄️</div><h5>Pinecone (Vector DB)</h5><p>Managed, scalable, and fast for information retrieval.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Demo Section -->
     <section id="demo" class="demo-section">
         <div class="container">
-            <h2 class="mb-4">
-                <span class="me-3" style="font-size: 1.5em;">▶️</span>LIVE DEMO
-            </h2>
-            <p class="lead mb-4">Experience our AI-powered admission counseling system in action</p>
+            <h2 class="mb-4 text-white"><span class="me-3">▶️</span>LIVE DEMO</h2>
+            <p class="lead mb-4">Experience our AI-powered admission counseling system in action.</p>
             <a href="https://gxnu-admissions.streamlit.app/" target="_blank" class="demo-button">
                 <span class="me-2">🚀</span>Try Live Demo
             </a>
-            
-            <div class="row mt-5">
-                <div class="col-md-6">
-                                            <div class="card bg-transparent border-light">
-                            <div class="card-body text-center">
-                                <div style="font-size: 3rem; margin-bottom: 1rem; color: white;">💬</div>
-                                <h5 class="text-white">Casual Conversation</h5>
-                                <p class="text-white">Natural language interaction with contextual understanding</p>
-                            </div>
-                        </div>
-                </div>
-                <div class="col-md-6">
-                                            <div class="card bg-transparent border-light">
-                            <div class="card-body text-center">
-                                <div style="font-size: 3rem; margin-bottom: 1rem; color: white;">🔍</div>
-                                <h5 class="text-white">Intelligent Search</h5>
-                                <p class="text-white">Smart database selection and document retrieval</p>
-                            </div>
-                        </div>
-                </div>
-            </div>
+           
         </div>
     </section>
 
-    <!-- Conclusion -->
     <section id="conclusion" class="py-5">
         <div class="container">
-            <h2 class="section-title">Impact & Future Work</h2>
-            
+            <h2 class="section-title">Conclusion & Future Work</h2>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="solution-card">
-                        <h5><span style="color: #10b981;" class="me-2">📈</span>Current Impact</h5>
+                        <h5><span style="color: var(--warning-color);" class="me-2">⚠️</span>Limitations</h5>
                         <ul class="list-unstyled">
-                            <li><span style="color: #10b981;" class="me-2">✅</span>24/7 automated support</li>
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Centralized knowledge hub</li>
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Instantaneous replies</li>
-                            <li><span style="color: #10b981;" class="me-2">✅</span>Factual & verified answers</li>
+                            <li><span class="me-2">➡️</span>Developed in only 10 days, so data was limited.</li>
+                            <li><span class="me-2">➡️</span>A small knowledge base leads to limited answer coverage.</li>
+                            <li><span class="me-2">➡️</span>No live university system integration yet.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="solution-card">
                         <h5><span style="color: var(--primary-color);" class="me-2">🚀</span>Future Potential</h5>
-                        <ul class="list-unstyled">
-                            <li><span style="color: #10b981;" class="me-2">💬</span>WeChat Integration</li>
-                            <li><span style="color: #06b6d4;" class="me-2">🌐</span>Official Website Plugin</li>
-                            <li><span style="color: #f59e0b;" class="me-2">↔️</span>Scalable Model</li>
-                            <li><span style="color: #8b5cf6;" class="me-2">🌍</span>Multi-language Support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-5 text-center">
-                <h4>System Limitations</h4>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="alert alert-warning">
-                            <span class="me-2">⚠️</span>
-                            <strong>Current Limitations:</strong> Requires ongoing maintenance for database updates, 
-                            performance depends on data quality, and may need fine-tuning for specific edge cases.
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><strong>WeChat Integration:</strong> Launch the chatbot on the official WeChat to reach students on their preferred platform.</li>
+                                    <li><strong>Official Website Plugin:</strong> Embed the chatbot as a widget on the university's admissions page.</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><strong>Scalable Model:</strong> Adapt the agent for other universities, languages, or departments.</li>
+                                    <li><strong>Multi-language Support:</strong> Expand capabilities to assist a more diverse international student body.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1137,23 +401,31 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h3>Thank You for Listening</h3>
+            <h3>Thank You for Visiting</h3>
             <p class="lead">谢谢你聆听，我们爱广西师范大学。</p>
             <p class="chinese-text">Xièxiè nǐ língtīng, wǒmen ài guǎngxī shīfàn dàxué.</p>
             
+            <div class="mt-4 mb-4">
+                <h5 class="text-white mb-3">Contact Information</h5>
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <a href="https://linkedin.com/in/ngtv117" target="_blank" class="text-white text-decoration-none">
+                        <i class="fab fa-linkedin me-2"></i>LinkedIn
+                    </a>
+                    <a href="https://github.com/vinhnt21" target="_blank" class="text-white text-decoration-none">
+                        <i class="fab fa-github me-2"></i>GitHub
+                    </a>
+                </div>
+            </div>
+            
             <div class="mt-4">
-                <p>&copy; 2025 Group 6 - Faculty of Information Technology, Hanoi University</p>
+                <p>&copy; 2025 - Faculty of Information Technology, Hanoi University</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="a.js"></script>
-    
-    <!-- Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1173,15 +445,13 @@
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
-            
             let currentSection = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
+                if (window.scrollY >= sectionTop) {
                     currentSection = section.getAttribute('id');
                 }
             });
-
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentSection}`) {
@@ -1191,4 +461,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
